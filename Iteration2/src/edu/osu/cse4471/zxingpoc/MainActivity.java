@@ -9,16 +9,41 @@ import java.util.Random;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	
+	Button button;
+	
+ 
+	public void addListenerOnButton() {
+ 
+		final Context context = this;
+ 
+		button = (Button) findViewById(R.id.button1);
+ 
+		button.setOnClickListener(new OnClickListener() {
+ 
+			public void onClick(View arg0) {
+ 
+			    Intent intent = new Intent(context, EncryptActivity.class);
+                            startActivity(intent);   
+ 
+			}
+ 
+		});
+ 
+	}
 
 	/* ID for activity passing from MainActivity */
 	public final static String DISPLAY_MESSAGE = "edu.osu.cse4471.zxingpoc.MainActivity";
@@ -61,6 +86,7 @@ public class MainActivity extends Activity {
 		
 		Intent colorChooser = new Intent(this, ColorChooser.class);
 		startActivity(colorChooser);
+
 
 		/* generate salt values for symmetric key encryption */
 		byte[] salt = Crypto.saltShaker(password.getText().toString(),
@@ -111,8 +137,6 @@ public class MainActivity extends Activity {
 			if (password.getText().toString().equals("")) {
 				password.setText(generateRandomPassword(ALPHABET, 8));
 			}
-
-			/* TODO prompt users for response colors */
 
 			/* generate salt values for symmetric key */
 			byte[] salt = Crypto.saltShaker(password.getText().toString(),

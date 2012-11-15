@@ -32,18 +32,22 @@ public final class R {
         public static final int edit_message=0x7f08000c;
         public static final int encryptMessage=0x7f08000a;
         public static final int imageView1=0x7f08000d;
-        public static final int menu_settings=0x7f08000e;
+        public static final int menu_settings=0x7f080010;
         public static final int password=0x7f08000b;
+        public static final int relativeLayout2=0x7f08000e;
         public static final int scanQRCode=0x7f080009;
+        public static final int textView1=0x7f08000f;
     }
     public static final class layout {
         public static final int activity_color_chooser=0x7f030000;
         public static final int activity_display_scanned_qrcode=0x7f030001;
         public static final int activity_main=0x7f030002;
+        public static final int activity_screen1=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_display_scanned_qrcode=0x7f070000;
-        public static final int activity_main=0x7f070001;
+        public static final int activity_color_chooser=0x7f070000;
+        public static final int activity_display_scanned_qrcode=0x7f070001;
+        public static final int activity_main=0x7f070002;
     }
     public static final class string {
         public static final int BLACK=0x7f040011;
